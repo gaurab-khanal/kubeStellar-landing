@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family:'Roboto', Arial, Helvetica, Sans-serif, Verdana;
 }
 
 a {
@@ -12,6 +12,16 @@ a {
 body {
     background-color: #f2f7ff;
     line-height: 1.6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100vh;
 }
 
 img {
@@ -29,23 +39,24 @@ img {
 /* Navigation */
 .navbar {
     background-color: #e1e8f0;
-    padding: 1rem;
     border-bottom: 1px solid #ead5d5;
-    position: relative;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.3rem;
+    padding-bottom: 0.5rem;
 }
 
-.announcement{
-    font-size: 0.7rem;
-    background-color: #3D93FE;
-    text-align: center;
-    padding: 0.5rem;
-    white-space: break-all;
-    justify-content: center;
-    align-items: center;
+.linkedin {
+    color: white;
+}
+
+.linkedin:hover {
+    text-decoration: underline;
 }
 
 .notice {
@@ -53,7 +64,10 @@ img {
     background-color: #3D93FE;
     text-align: center;
     padding: 0.5rem;
+    color: white;
+    width: 100%;
 }
+
 
 .nav-header {
     display: flex;
@@ -80,12 +94,13 @@ img {
 
 .nav-links.active {
     display: flex;
+    align-items: start;
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #e1e8f0;
+    background-color: white;
     padding: 1rem;
     z-index: 1000;
 }
@@ -134,7 +149,6 @@ img {
     border-radius: 1rem;
     border: 1px solid #CEBDBD;
     color: #3A4756;
-    font-family: Inter;
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
@@ -172,6 +186,7 @@ img {
 
 .hero-content {
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2.5px);
     border-radius: 40px;
     padding: 2rem;
     margin: 0 auto;
@@ -180,8 +195,24 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero-intro {
+    color: #FFF;
+    text-align: center;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: start;
+}
+
 
 .hero h1 {
     color: white;
@@ -245,7 +276,6 @@ img {
 .explanation {
     max-width: 800px;
     color: #3A4756;
-    font-family: Inter;
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 500;
@@ -289,7 +319,6 @@ img {
     align-items: center;
     gap: 1rem;
     color: #3A4756;
-    font-family: Inter;
     font-style: normal;
     font-weight: 200;
     line-height: normal;
@@ -345,13 +374,16 @@ footer {
 
 .cncf-section p {
     color: #1E2A39;
-    font-family: Inter;
     font-size: 1.1rem;
     font-style: normal;
     font-weight: 300;
     line-height: normal;
     text-align: start;
     max-width: 63rem;
+}
+
+.trademark:hover {
+    text-decoration: underline;
 }
 
 /* Media Queries */
@@ -394,7 +426,7 @@ footer {
     }
 
     .notice {
-        font-size: 1rem;
+        font-size: 0.87rem;
     }
 
     .github-star {
